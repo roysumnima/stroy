@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <style>
+
+:root {
+  --form-control-color: black;
+  --form-control-disabled: #959495;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.checklist {
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 27px,
+      #b7d7ff 27px,
+      #b7d7ff 28px
+    );
+
+  line-height: 1rem;
+  /* border-bottom: 0.08em solid var(--form-control-color); */
+}
+
+form {
+  display: grid;
+  padding: 2em;
+  justify-content: center;
+  max-height: 100vh;
+}
+
+.form-control {
+  position: relative;
+  font-family: monospace;
+  font-size: 1rem;
+  line-height: 1.3;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.form-control + .form-control {
+  padding: 0.1rem;
+}
+
+.form-control--disabled {
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
+}
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  /* color: currentColor; */
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.1em solid currentColor;
+  /* border-radius: 0.15em; */
+  /* transform: translateY(-0.075em); */
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  /* transition: 120ms transform ease-in-out; */
+  box-shadow: inset 1em 1em var(--form-control-color);
+  /* Windows High Contrast Mode */
+  /* background-color: CanvasText; */
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:checked + label.strike {
+  text-decoration: line-through;
+}
+
+input[type="checkbox"]:checked + label.strike-words span {
+  text-decoration: line-through;
+}
+
+/* input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+} */
+
+input[type="checkbox"]:disabled {
+  /* --form-control-color: var(--form-control-disabled); */
+
+  /* color: var(--form-control-disabled); */
+  cursor: not-allowed;
+}
+
+
+@keyframes blink {
+  50% {
+    text-decoration: line-through;
+  }
+}
+
+.strikethrough-5s {
+  animation: blink 5s infinite;
+}
+
+.strikethrough-1s {
+  animation: blink 1s infinite;
+}
+
+.strikethrough-2s {
+  animation: blink 2s infinite;
+}
+
+.strikethrough-2s-alt {
+  animation: blink 2s 1s infinite;
+}
+
+.strikethrough-3s {
+  animation: blink 3s infinite;
+}
+
+
+.indent {
+  margin-left: 3rem;
+}
+
+</style>
+  </head>
+  <body >
+    
+    <nav>
+      <div>
+        <a href="/">&lt;-</a>
+      </div>
+    </nav>
+    
+    <form class="checklist" >
+  <h1 style="font-family: monospace;"> the 
+    <span class="strikethrough-5s">femmes</span>
+    <span class="strikethrough-1s">want</span>
+    to have 
+    <span class="strikethrough-3s">kissed</span>
+     a 
+    <span class="strikethrough-2s">masc</span>
+     
+    <span class="strikethrough-2s-alt">lesbian</span>
+    
+  </h1>
+
+<div class="form-control">
+  <input type="checkbox" id="line2" name="line2" value="Car">
+  <label for="line2"> no makeup except the dark blue kohl on her bottom waterline</label>
+</div>
+<div class="form-control">
+  <input type="checkbox" id="line3" name="line3" value="Boat">
+  <label for="line3"> glitter and sweat</label>
+</div>  
+
+<div class="form-control">
+  <input type="checkbox" id="line4" name="line4" value="Boat">
+  <label for="line4"> fluffy hair, mess of curls, bleach-burned tips</label>
+</div>  
+<div class="form-control">
+  <input type="checkbox" id="line5" name="line5" value="Boat">
+  <label for="line5"> doesn't shave </label>
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="line6" name="line6" value="Boat">
+  <label for="line6"> half-buttoned shirt</label>
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="line7" name="line7" value="Boat">
+  <label for="line7"> no bra</label>
+</div>
+<div class="form-control">
+  <input type="checkbox" id="line8" name="line8" value="Boat">
+  <label for="line8"> trail of dark curls you can trace from belly
+  button to under the waistband of her boxers</label>
+</div>
+<div class="form-control">
+  <input type="checkbox" id="line9" name="line9" value="Boat">
+  <label for="line9"> henna spiracled hands wandering around your waist</label>
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="line10" name="line10" value="Boat">
+  <label for="line10  "> the first helix piercing she got, healed well enough for you to twist</label>
+</div>
+
+<br />
+
+<div class="form-control">
+  <input type="checkbox" id="line11" name="line11" value="Boat">
+  <label for="line11"> tell your friends, excitedly, that you made out with a masc lesbian</label>
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="line12" name="line12" value="Boat">
+  <label for="line12"> she'll find out, and this label will linger,</label>
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="line13" name="line13" value="Boat">
+  <label for="line13"> she'll write a poem about it</label>
+</div>
+
+<div class="indent">
+  
+<div class="form-control" style="translateX:10px">
+  <input type="checkbox" id="line14" name="line14" value="Boat">
+  <label for="line14"> about the time she'd tied her hair back to take in the needle the first time</label>
+</div>
+
+<div class="indent">
+  
+<div class="form-control">
+  <input type="checkbox" id="vehicle15" name="vehicle15" value="Boat">
+  <label for="vehicle15"> how she emerged bright-eyed, rim of blood around the metal</label>
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle16" name="vehicle16" value="Boat">
+  <label for="vehicle16"> first time her best friend saw her as a boy</label>
+</div>  
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle17" name="vehicle17" value="Boat">
+  <label class="strike" for="vehicle17"> first time her best friend thought she could be pretty</label>
+</div>
+
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle18" name="vehicle18" value="Boat">
+  <label for="vehicle18"> about the Diwali she'd raised her arms in a sleeveless kurta</label>
+</div>
+
+<div class="indent">
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle19" name="vehicle19" value="Boat">
+  <label for="vehicle19"> dark disgusting curls peeking out at the brown girls watching</label>
+</div>
+<div class="form-control">
+  <input type="checkbox" id="vehicle20" name="vehicle20" value="Boat">
+  <label for="vehicle20"> how they called her brave</label>
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle21" name="vehicle21" value="Boat">
+  <label class="strike" for="vehicle21"> she tried on girlhood for the first time in years after that</label>
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle21" name="vehicle21" value="Boat">
+  <label class="strike" for="vehicle21">let it it stick around for them</label>
+</div>
+
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle22" name="vehicle22" value="Boat">
+  <label class="strike-words" for="vehicle22"> the <span>girl</span> <span>boy</span> masc lesbian will wonder at </label>
+</div>    
+<div class="form-control">
+  <input type="checkbox" id="vehicle23" name="vehicle23" value="Boat">
+  <label for="vehicle23"> how easy it is: to be called that by the girls</label>
+</div>
+
+<div class="indent">
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle24" name="vehicle24" value="Boat">
+  <label for="vehicle24"> in gentle makeup</label>
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle25" name="vehicle25" value="Boat">
+  <label for="vehicle25"> in pretty dresses</label>
+</div>
+<div class="form-control">
+  <input type="checkbox" id="vehicle26" name="vehicle26" value="Boat">
+  <label for="vehicle26"> bras</label>
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle27" name="vehicle27" value="Boat">
+  <label for="vehicle27"> and lace underwear</label>
+</div>  
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle28" name="vehicle28" value="Boat">
+  <label for="vehicle28"> and smooth skin</label>
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle29" name="vehicle29" value="Boat">
+  <label for="vehicle29"> and shining hair</label>
+</div>  
+
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle30" name="vehicle30" value="Boat">
+  <label for="vehicle30"> how alien it must be: for you to see</label>
+</div>
+
+<div class="indent">
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle31" name="vehicle31" value="Boat">
+  <label for="vehicle31"> a boy like her who still says she's a </label>
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle31" name="vehicle31" value="Boat">
+  <label class="strike" for="vehicle31"> girl</label>
+</div>
+  
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle32" name="vehicle32" value="Boat">
+  <label for="vehicle32"> she's just like other girls and girls will be boys</label>
+</div>    
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle33" name="vehicle33" value="Boat">
+  <label for="vehicle33"> but right now she's just the masc lesbian on your list</label>
+</div>
+<div class="form-control">
+  <input type="checkbox" id="vehicle34" name="vehicle34" value="Boat">
+  <label for="vehicle34"> and you're clinging to the labels</label>
+</div>
+<div class="form-control">
+  <input type="checkbox" id="vehicle35" name="vehicle35" value="Boat">
+  <label for="vehicle35"> and clinging to the performance</label>
+</div>
+
+<div class="form-control">
+  <input type="checkbox" id="vehicle36" name="vehicle36" value="Boat">
+  <label for="vehicle36"> you make sure you're clinging to her</label>
+</div>
+<div class="form-control">
+  <input type="checkbox" id="vehicle37" name="vehicle37" value="Boat">
+  <label for="vehicle37"> and that she pins you to the wall </label>
+</div>
+<div class="form-control">  
+  <input type="checkbox" id="vehicle38" name="vehicle38" value="Boat">
+  <label for="vehicle38"> and that her hands are on your hips because that's how it's supposed to go</label>
+
+<br />
+
+</div>
+<div class="form-control">
+  <input type="checkbox" id="vehicle39" name="vehicle39" value="Boat">
+  <label for="vehicle39"> and now you've made out with the  masc  lesbian, and now you can go tell your friends</label>
+</div>
+<div class="form-control">
+  <input type="checkbox" id="vehicle40" name="vehicle40" value="Boat">
+  <label for="vehicle40"> and now you can look at your lips in the mirror to redo the gloss</label>
+</div>
+<div class="form-control">
+  <input type="checkbox" id="vehicle41" name="vehicle41" value="Boat">
+  <label for="vehicle41"> and now you don't have to talk to her.</label>
+</div>  
+
+</form>
+  </body>
+</html>
